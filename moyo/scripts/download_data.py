@@ -192,13 +192,13 @@ def download_data(args):
 
     # Get URL paths
     url_files_dict = {
-        "cameras_urls": op.join(args.url_dir, "cameras.txt"),
-        "image_train_urls": op.join(args.url_dir, "images_train.txt"),
-        "image_val_urls": op.join(args.url_dir, "images_val.txt"),
-        "com_urls": op.join(args.url_dir, "coms.txt"),
-        "pressure_urls": op.join(args.url_dir, "pressures.txt"),
+        # "cameras_urls": op.join(args.url_dir, "cameras.txt"),
+        # "image_train_urls": op.join(args.url_dir, "images_train.txt"),
+        # "image_val_urls": op.join(args.url_dir, "images_val.txt"),
+        # "com_urls": op.join(args.url_dir, "coms.txt"),
+        # "pressure_urls": op.join(args.url_dir, "pressures.txt"),
         "vicon_urls": op.join(args.url_dir, "vicon.txt"),
-        "smplx_fits_urls": op.join(args.url_dir, "smplx_fits.txt"),
+        # "smplx_fits_urls": op.join(args.url_dir, "smplx_fits.txt"),
     }
 
     # Download urls
@@ -230,10 +230,12 @@ if __name__ == "__main__":
         required=True,
     )
     parser.add_argument(
-        "--username", type=str, help="Username for the MOYO data download, register at moyo.is.mpg.de", required=True
+        "--username", type=str, help="Username for the MOYO data download, register at moyo.is.mpg.de", required=True,
+        default='1447097496@qq.com'
     )
     parser.add_argument(
-        "--password", type=str, help="Password for the MOYO data download, register at moyo.is.mpg.de", required=True
+        "--password", type=str, help="Password for the MOYO data download, register at moyo.is.mpg.de", required=True,
+        default='Sb520250'
     )
     parser.add_argument(
         "--download_images", type=str, help="Whether to download the images", default="True"

@@ -52,7 +52,7 @@ echo -e "\n" 1>&2
 
 echo $OUT_DIR
 echo -e "Download Images: $DOWNLOAD_IMAGES" 1>&2
-python $PWD/moyo/scripts_data/download_data.py --url_dir $PWD/moyo/bash/assets/urls/ \
+python $PWD/moyo/scripts/download_data.py --url_dir $PWD/moyo/bash/assets/urls/ \
                                      --out_dir $OUT_DIR \
                                      --username $USERNAME \
                                      --password $PASSWORD \

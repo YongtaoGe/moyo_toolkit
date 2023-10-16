@@ -104,7 +104,10 @@ def visualize_on_img(j2d, img_name, out_dir):
     print(f'{out_img_path} is saved')
 
 
-def main(img_folder, c3d_folder, model_folder, output_dir, cam_folders, frame_offset, split, downsample_factor):
+def main(
+    img_folder, c3d_folder, model_folder, 
+    output_dir, cam_folders, 
+    frame_offset, split, downsample_factor):
     # presented poses
     c3d_folder = os.path.join(c3d_folder, split, 'c3d')
     c3d_names = os.listdir(c3d_folder)
@@ -132,8 +135,7 @@ def main(img_folder, c3d_folder, model_folder, output_dir, cam_folders, frame_of
 
         c3d = ezc3d(c3d_path)
 
-        markers3d = c3d['data']['points'].transpose(2, 1,
-                                                    0)  # Frames x NumPoints x 4 (x,y,z,1) in homogenous coordinates
+        markers3d = c3d['data']['points'].transpose(2, 1, 0)  # Frames x NumPoints x 4 (x,y,z,1) in homogenous coordinates
 
         try:
             c3d_var = '_'.join(c3d_name.split('_')[5:])
